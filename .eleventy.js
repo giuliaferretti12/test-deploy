@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob('src/blog/posts/**/*.md');
 });
     return {
+        pathPrefix: "/test-deploy/",
         dir: {
             input: 'src',
             includes: '_includes',
