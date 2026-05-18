@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/css/global.css" rel="stylesheet">
+    <title>{{ title }}</title>
+</head>
+<nav><a href="/index.html">Mon site</a> <a href="/blog/">Voir le blog</a></nav>
+<body>
+    <h1>{{ title }}</h1>
+    <header>
+        <ul>
+            {% for tag in tags %}
+            <li>
+                <a href="/blog/tag/{{ tag | slugify }}">{{ tag }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </header>
+    <div class="texte">{{ content | safe }}</div>
+</body>
+</html>
